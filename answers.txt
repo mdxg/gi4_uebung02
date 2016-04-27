@@ -1,0 +1,64 @@
+Aufgabe1 b)
+	im makefile müssen die Header-Dateien des Betriebssystems nicht gesondert beachtet werden da sie im standart include pfad des gcc liegen
+
+Aufgabe1 e)
+	make versucht install oder clean als Makefile zu benutzen und scheitert bzw. sagt, dass alles aktuell ist
+
+
+Aufgabe2 a)
+	char msg[] = "Hello World!"
+	
+	-------->Adressen aufsteigend
+	------------------------------------------------------------------	
+	|0x48|0x65|0x6c|0x6c|0x6F|0x20|0x57|0x6f|0x72|0x6c|0x64|0x21|0x00|
+	------------------------------------------------------------------
+
+Aufgabe2 b)
+	Speicheradressen wachsen nach rechts ---->
+
+	int i = 0xDEADBEEF
+	------------------
+	LE					BE
+	0xEF|0xBE|0xAD|0xDE			0xDE|0xAD|0xBE|0xEF
+
+	
+	shart s = 1025
+	--------------
+	LE					BE
+	0x01|0x04				0x04|0x01
+
+	char c = 7
+	----------
+	LE					BE
+	0x07					0x07
+
+Aufgabe2 c)
+	|	steigende Adressen
+	|
+	|
+	V
+
+	0x07					char index = 7
+	padding byte
+	padding byte
+	padding byte
+	0x00					int avalue = -512
+	0xFE
+	0xFF
+	0xFF
+	0xFF
+	0xFF
+	0x00					short shortvalue = 127
+	0x10
+	0x20					char space = 32
+	padding byte
+	0x23					short sarray[0] = 0x123
+	0x01
+	0x65					short sarray[1] = 0x456
+	0x04
+	padding byte
+	padding byte
+	0x00					int anothervalue = 4096
+	0x10
+	0x00
+	0x00
