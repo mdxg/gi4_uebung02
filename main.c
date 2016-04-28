@@ -1,9 +1,20 @@
-#include  <stdio.h>
-#include  <string.h>
-#include  <stdlib.h>
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
 #include "utils.h"
 
-int main(int argc, char* argv[]){
-	printf("Hallo");
-	return 0;
+typedef struct{
+	char index;
+	int avalue;
+	short shortvalue;
+	char space;
+	short sarray[2];
+	int anothervalue;
+}bigone;
+
+int main(){
+	bigone x = {7, -512, 127, 32, {0x123, 0x456}, 4096};
+	while(1);
 }
+
+
